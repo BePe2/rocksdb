@@ -27,7 +27,7 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -DXPRESS=1 -DROCKSDB_SKIP_THIRDPARTY=1 -DPORTABLE=1
+      run: cmake -DXPRESS=1 -DROCKSDB_SKIP_THIRDPARTY=1 -DPORTABLE=1 --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} 
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
